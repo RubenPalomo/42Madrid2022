@@ -6,7 +6,7 @@
 /*   By: rpalomo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 16:53:29 by rpalomo-          #+#    #+#             */
-/*   Updated: 2022/05/25 18:40:27 by rpalomo-         ###   ########.fr       */
+/*   Updated: 2022/06/01 15:03:26 by rpalomo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ int	ft_convert_text_to_int(char *text)
 	i = 0;
 	size = 0;
 	number = 0;
+	if (text[0] == '\0')
+		return (0);
 	while (text[size] != '\0')
 		size++;
 	if (size == 1)
@@ -78,7 +80,7 @@ int	ft_atoi(char *str)
 	int		i;
 	int		j;
 	int		minus;
-	char	number_char[100];
+	char	number_char[500];
 
 	i = 0;
 	j = 0;
@@ -102,7 +104,7 @@ int	ft_atoi(char *str)
 /*
 int	main(void)
 {
-	printf("%d\n", ft_atoi(""));
+	printf("%d\n", ft_atoi(" 5 5asd"));
 	return (0);
 }
 */

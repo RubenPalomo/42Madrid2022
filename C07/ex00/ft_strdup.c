@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpalomo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/28 12:29:36 by rpalomo-          #+#    #+#             */
-/*   Updated: 2022/05/29 19:57:40 by rpalomo-         ###   ########.fr       */
+/*   Created: 2022/05/29 10:19:49 by rpalomo-          #+#    #+#             */
+/*   Updated: 2022/06/01 22:20:46 by rpalomo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
+#include<stdlib.h>
 
-int	ft_sqrt(int nb)
+char	*ft_strdup(char *src)
 {
-	int	i;
+	int		i;
+	char	*dest;
 
-	if (nb < 0)
-		return (0);
-	else if (nb == 1)
-		return (1);
-	i = 1;
-	while (i * i <= nb)
+	dest = malloc(sizeof(char));
+	i = 0;
+	while (src[i] != '\0')
 	{
-		if (i * i == nb)
-			return (i);
-		else if (i == 46341)
-			return (0);
+		dest[i] = src[i];
 		i++;
 	}
-	return (0);
+	dest[i] = '\0';
+	return (dest);
 }
 
 /*
 int	main(void)
 {
-	printf("%d", ft_sqrt(2147483647));
+	char *prueba;
+
+	prueba = ft_strdup("Hola hola para ti mi cola.");
+	printf("%s\n", prueba);
+	return (0);
 }
 */
